@@ -94,3 +94,4 @@ C:\Users\drraf\Source\Cursos\CursoOnline\test\CusoOnline.Dominio.Test\obj\Debug\
 C:\Users\drraf\Source\Cursos\CursoOnline\test\CusoOnline.Dominio.Test\obj\Debug\netcoreapp3.1\CusoOnline.Dominio.Test.dll
 C:\Users\drraf\Source\Cursos\CursoOnline\test\CusoOnline.Dominio.Test\obj\Debug\netcoreapp3.1\CusoOnline.Dominio.Test.pdb
 C:\Users\drraf\Source\Cursos\CursoOnline\test\CusoOnline.Dominio.Test\obj\Debug\netcoreapp3.1\CusoOnline.Dominio.Test.genruntimeconfig.cache
+C:\Users\drraf\Source\Cursos\CursoOnline\test\CusoOnline.Dominio.Test\bin\Debug\netcoreapp3.1\ExpectedObjects.dll
