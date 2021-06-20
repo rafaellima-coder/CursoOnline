@@ -18,13 +18,13 @@ namespace CusoOnline.Dominio.Test.Cursos
         {
             var cursoEsperado = new
             {
-               Nome = "Informática básica",
-            CargaHoraria = (double)80,
-            Valor = (double)950,
-            PublicoAlvo = "Estudante"
-        };
+                Nome = "Informática básica",
+                CargaHoraria = (double)80,
+                Valor = (double)950,
+                PublicoAlvo = "Estudante"
+            };
 
-            var curso = new Curso(cursoEsperado.Nome, cursoEsperado.CargaHoraria, cursoEsperado.PublicoAlvo, cursoEsperado.Valor) ;
+            var curso = new Curso(cursoEsperado.Nome, cursoEsperado.CargaHoraria, cursoEsperado.PublicoAlvo, cursoEsperado.Valor);
 
             cursoEsperado.ToExpectedObject().ShouldMatch(curso);
         }
@@ -76,7 +76,7 @@ namespace CusoOnline.Dominio.Test.Cursos
             {
                 return valor;
             }
-            private set 
+            private set
             {
                 valor = value;
             }
