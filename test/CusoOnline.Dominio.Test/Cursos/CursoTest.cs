@@ -1,4 +1,5 @@
 ﻿using ExpectedObjects;
+using System;
 using Xunit;
 
 namespace CusoOnline.Dominio.Test.Cursos
@@ -27,6 +28,59 @@ namespace CusoOnline.Dominio.Test.Cursos
             var curso = new Curso(cursoEsperado.Nome, cursoEsperado.CargaHoraria, cursoEsperado.PublicoAlvo, cursoEsperado.Valor);
 
             cursoEsperado.ToExpectedObject().ShouldMatch(curso);
+        }
+        [Theory]
+        [InlineData("")]
+        [InlineData(null)]
+        public void NaoDeveCursoTerUmNomeInvalido(string nomeInvalido)
+        {
+            var cursoEsperado = new
+            {
+                Nome = "Informática básica",
+                CargaHoraria = (double)80,
+                Valor = (double)950,
+                PublicoAlvo = PublicAlvo.Estudante
+            };
+           var mensagem = Assert.Throws<ArgumentException>(() =>
+            new Curso(nomeInvalido, cursoEsperado.CargaHoraria, cursoEsperado.PublicoAlvo, cursoEsperado.Valor)).Message;
+
+            Assert.Equal("Deve ter um nome válido.",mensagem);
+        }
+
+        [Theory]
+        [InlineData(0)]
+        [InlineData(-2)]
+        [InlineData(-100)]
+        public void NaoDeveCursoTerUmaCargaHorariaMenorQue1(double cargaHorariaInvalida)
+        {
+            var cursoEsperado = new
+            {
+                Nome = "Informática básica",
+                CargaHoraria = (double)80,
+                Valor = (double)950,
+                PublicoAlvo = PublicAlvo.Estudante
+            };
+           var mensagem = Assert.Throws<ArgumentException>(() =>
+      new Curso(cursoEsperado.Nome, cargaHorariaInvalida, cursoEsperado.PublicoAlvo, cursoEsperado.Valor)).Message;
+            Assert.Equal("A carga horária deve ser maior ou igual a 1",mensagem);
+        }
+
+        [Theory]
+        [InlineData(0)]
+        [InlineData(-2)]
+        [InlineData(-100)]
+        public void NaoDeveCursoTerValorMenorQue1(double valorInvalido)
+        {
+            var cursoEsperado = new
+            {
+                Nome = "Informática básica",
+                CargaHoraria = (double)80,
+                Valor = (double)950,
+                PublicoAlvo = PublicAlvo.Estudante
+            };
+           var mensagem = Assert.Throws<ArgumentException>(() =>
+      new Curso(cursoEsperado.Nome, cursoEsperado.Valor, cursoEsperado.PublicoAlvo, valorInvalido)).Message;
+            Assert.Equal("O valor deve ser maior ou igual a 1",mensagem);
         }
     }
     internal enum PublicAlvo
@@ -91,6 +145,15 @@ namespace CusoOnline.Dominio.Test.Cursos
 
         public Curso(string nome, double cargaHoraria, PublicAlvo publicoAlvo, double valor)
         {
+            if (string.IsNullOrEmpty(nome))
+                throw new ArgumentException("Deve ter um nome válido.");
+
+            if (cargaHoraria < 1)
+                throw new ArgumentException("A carga horária deve ser maior ou igual a 1");
+
+            if (valor < 1)
+                throw new ArgumentException("O valor deve ser maior ou igual a 1");
+
             this.nome = nome;
             this.cargaHoraria = cargaHoraria;
             this.publicoAlvo = publicoAlvo;
