@@ -18,23 +18,29 @@ namespace CusoOnline.Dominio.Test.Cursos
         {
             var cursoEsperado = new
             {
-               Nome = "Informática básica",
-            CargaHoraria = (double)80,
-            Valor = (double)950,
-            PublicoAlvo = "Estudante"
-        };
+                Nome = "Informática básica",
+                CargaHoraria = (double)80,
+                Valor = (double)950,
+                PublicoAlvo = PublicAlvo.Estudante
+            };
 
-            var curso = new Curso(cursoEsperado.Nome, cursoEsperado.CargaHoraria, cursoEsperado.PublicoAlvo, cursoEsperado.Valor) ;
+            var curso = new Curso(cursoEsperado.Nome, cursoEsperado.CargaHoraria, cursoEsperado.PublicoAlvo, cursoEsperado.Valor);
 
             cursoEsperado.ToExpectedObject().ShouldMatch(curso);
         }
     }
-
+    internal enum PublicAlvo
+    {
+        Estudante,
+        Universitario,
+        Empregado,
+        Empreendedor
+    }
     internal class Curso
     {
         private string nome;
         private double cargaHoraria;
-        private string publicoAlvo;
+        private PublicAlvo publicoAlvo;
         private double valor;
 
         public string Nome
@@ -59,7 +65,7 @@ namespace CusoOnline.Dominio.Test.Cursos
                 cargaHoraria = value;
             }
         }
-        public string PublicoAlvo
+        public PublicAlvo PublicoAlvo
         {
             get
             {
@@ -76,14 +82,14 @@ namespace CusoOnline.Dominio.Test.Cursos
             {
                 return valor;
             }
-            private set 
+            private set
             {
                 valor = value;
             }
         }
 
 
-        public Curso(string nome, double cargaHoraria, string publicoAlvo, double valor)
+        public Curso(string nome, double cargaHoraria, PublicAlvo publicoAlvo, double valor)
         {
             this.nome = nome;
             this.cargaHoraria = cargaHoraria;
