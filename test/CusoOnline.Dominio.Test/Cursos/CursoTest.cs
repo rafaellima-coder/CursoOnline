@@ -1,4 +1,5 @@
-﻿using ExpectedObjects;
+﻿using CusoOnline.Dominio.Test.Extensoes;
+using ExpectedObjects;
 using System;
 using Xunit;
 
@@ -41,10 +42,10 @@ namespace CusoOnline.Dominio.Test.Cursos
                 Valor = (double)950,
                 PublicoAlvo = PublicAlvo.Estudante
             };
-           var mensagem = Assert.Throws<ArgumentException>(() =>
-            new Curso(nomeInvalido, cursoEsperado.CargaHoraria, cursoEsperado.PublicoAlvo, cursoEsperado.Valor)).Message;
-
-            Assert.Equal("Deve ter um nome válido.",mensagem);
+           Assert.Throws<ArgumentException>(() =>
+            new Curso(nomeInvalido, cursoEsperado.CargaHoraria, cursoEsperado.PublicoAlvo, cursoEsperado.Valor))
+                .ComMensagem("Deve ter um nome válido.");
+            
         }
 
         [Theory]
@@ -60,9 +61,10 @@ namespace CusoOnline.Dominio.Test.Cursos
                 Valor = (double)950,
                 PublicoAlvo = PublicAlvo.Estudante
             };
-           var mensagem = Assert.Throws<ArgumentException>(() =>
-      new Curso(cursoEsperado.Nome, cargaHorariaInvalida, cursoEsperado.PublicoAlvo, cursoEsperado.Valor)).Message;
-            Assert.Equal("A carga horária deve ser maior ou igual a 1",mensagem);
+         Assert.Throws<ArgumentException>(() =>
+      new Curso(cursoEsperado.Nome, cargaHorariaInvalida, cursoEsperado.PublicoAlvo, cursoEsperado.Valor))
+                .ComMensagem("A carga horária deve ser maior ou igual a 1");
+           
         }
 
         [Theory]
@@ -78,9 +80,10 @@ namespace CusoOnline.Dominio.Test.Cursos
                 Valor = (double)950,
                 PublicoAlvo = PublicAlvo.Estudante
             };
-           var mensagem = Assert.Throws<ArgumentException>(() =>
-      new Curso(cursoEsperado.Nome, cursoEsperado.Valor, cursoEsperado.PublicoAlvo, valorInvalido)).Message;
-            Assert.Equal("O valor deve ser maior ou igual a 1",mensagem);
+           Assert.Throws<ArgumentException>(() =>
+      new Curso(cursoEsperado.Nome, cursoEsperado.Valor, cursoEsperado.PublicoAlvo, valorInvalido))
+                .ComMensagem("O valor deve ser maior ou igual a 1");
+           
         }
     }
     internal enum PublicAlvo
@@ -141,8 +144,6 @@ namespace CusoOnline.Dominio.Test.Cursos
                 valor = value;
             }
         }
-
-
         public Curso(string nome, double cargaHoraria, PublicAlvo publicoAlvo, double valor)
         {
             if (string.IsNullOrEmpty(nome))
