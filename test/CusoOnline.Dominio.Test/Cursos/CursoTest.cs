@@ -1,9 +1,10 @@
-﻿using CusoOnline.Dominio.Test.Extensoes;
+﻿using CursoOnline.Dominio.Test.Extensoes;
 using ExpectedObjects;
 using System;
 using Xunit;
+using Xunit.Abstractions;
 
-namespace CusoOnline.Dominio.Test.Cursos
+namespace CursoOnline.Dominio.Test.Cursos
 {
     //Eu, enquanto adiministrador, quero criar e editar cursos para que sejam abertas
     //matriculas para o mesmo.
@@ -13,17 +14,37 @@ namespace CusoOnline.Dominio.Test.Cursos
     //- Criar um curso com nome. carga horária, publico alvo e valor do curso
     //- As opções para o publico alvo são: Estudante, Universitário, Empregado e Empreendedor
     //- Todos os campos do cruso são obrigatórios.
-    public class CursoTest
+    public class CursoTest:IDisposable
     {
+        readonly ITestOutputHelper _output;
+        private readonly string _nome;
+        private readonly double _cargaHoraria;
+        private readonly double _valor;
+        private readonly PublicAlvo _publicoAlvo;
+
+        public CursoTest(ITestOutputHelper outputHelper)
+        {
+            _output = outputHelper;
+            _output.WriteLine("Construtor sendo executado");
+            _nome = "Informática básica";
+            _cargaHoraria = (double)80;
+            _valor = (double)950;
+            _publicoAlvo = PublicAlvo.Estudante;
+          
+        }
+        public void Dispose()
+        {
+            _output.WriteLine("Dispose sendo executado");
+        }
         [Fact]
         public void DeveCriarCurso()
         {
             var cursoEsperado = new
             {
-                Nome = "Informática básica",
-                CargaHoraria = (double)80,
-                Valor = (double)950,
-                PublicoAlvo = PublicAlvo.Estudante
+                Nome = _nome,
+                CargaHoraria = _cargaHoraria,
+                Valor = _valor,
+                PublicoAlvo = _publicoAlvo
             };
 
             var curso = new Curso(cursoEsperado.Nome, cursoEsperado.CargaHoraria, cursoEsperado.PublicoAlvo, cursoEsperado.Valor);
@@ -35,15 +56,9 @@ namespace CusoOnline.Dominio.Test.Cursos
         [InlineData(null)]
         public void NaoDeveCursoTerUmNomeInvalido(string nomeInvalido)
         {
-            var cursoEsperado = new
-            {
-                Nome = "Informática básica",
-                CargaHoraria = (double)80,
-                Valor = (double)950,
-                PublicoAlvo = PublicAlvo.Estudante
-            };
+            
            Assert.Throws<ArgumentException>(() =>
-            new Curso(nomeInvalido, cursoEsperado.CargaHoraria, cursoEsperado.PublicoAlvo, cursoEsperado.Valor))
+            new Curso(nomeInvalido, _cargaHoraria, _publicoAlvo, _valor))
                 .ComMensagem("Deve ter um nome válido.");
             
         }
@@ -54,15 +69,9 @@ namespace CusoOnline.Dominio.Test.Cursos
         [InlineData(-100)]
         public void NaoDeveCursoTerUmaCargaHorariaMenorQue1(double cargaHorariaInvalida)
         {
-            var cursoEsperado = new
-            {
-                Nome = "Informática básica",
-                CargaHoraria = (double)80,
-                Valor = (double)950,
-                PublicoAlvo = PublicAlvo.Estudante
-            };
+            
          Assert.Throws<ArgumentException>(() =>
-      new Curso(cursoEsperado.Nome, cargaHorariaInvalida, cursoEsperado.PublicoAlvo, cursoEsperado.Valor))
+      new Curso(_nome, cargaHorariaInvalida, _publicoAlvo, _valor))
                 .ComMensagem("A carga horária deve ser maior ou igual a 1");
            
         }
@@ -73,18 +82,14 @@ namespace CusoOnline.Dominio.Test.Cursos
         [InlineData(-100)]
         public void NaoDeveCursoTerValorMenorQue1(double valorInvalido)
         {
-            var cursoEsperado = new
-            {
-                Nome = "Informática básica",
-                CargaHoraria = (double)80,
-                Valor = (double)950,
-                PublicoAlvo = PublicAlvo.Estudante
-            };
+           
            Assert.Throws<ArgumentException>(() =>
-      new Curso(cursoEsperado.Nome, cursoEsperado.Valor, cursoEsperado.PublicoAlvo, valorInvalido))
+      new Curso(_nome, _cargaHoraria, _publicoAlvo, valorInvalido))
                 .ComMensagem("O valor deve ser maior ou igual a 1");
            
         }
+
+       
     }
     internal enum PublicAlvo
     {
