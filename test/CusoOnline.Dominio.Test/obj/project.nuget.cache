@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "I4t3D9fBhc7VNqF7bv3sMPowMliXdAGUaMLc/wR08kPRL7LE1MXr3eAHRH7ONurbj2adQW2t3huhaCj87XVhGg==",
+  "dgSpecHash": "nTSrlet92fVwHO3xr6Zie33Qshzz44907L+AFA034CnpNybQClbswPWfwDdmfOa8fD4GfVauqI/cGjlOfIpBTw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\drraf\\Source\\Cursos\\CursoOnline\\test\\CusoOnline.Dominio.Test\\CusoOnline.Dominio.Test.csproj",
+  "projectFilePath": "C:\\Users\\drraf\\Source\\Cursos\\CursoOnline\\test\\CusoOnline.Dominio.Test\\CursoOnline.Dominio.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\drraf\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
     "C:\\Users\\drraf\\.nuget\\packages\\expectedobjects\\3.5.3\\expectedobjects.3.5.3.nupkg.sha512",
