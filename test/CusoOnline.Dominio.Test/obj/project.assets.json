@@ -5581,9 +5581,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\drraf\\Source\\Cursos\\CursoOnline\\test\\CusoOnline.Dominio.Test\\CusoOnline.Dominio.Test.csproj",
-      "projectName": "CusoOnline.Dominio.Test",
-      "projectPath": "C:\\Users\\drraf\\Source\\Cursos\\CursoOnline\\test\\CusoOnline.Dominio.Test\\CusoOnline.Dominio.Test.csproj",
+      "projectUniqueName": "C:\\Users\\drraf\\Source\\Cursos\\CursoOnline\\test\\CusoOnline.Dominio.Test\\CursoOnline.Dominio.Test.csproj",
+      "projectName": "CursoOnline.Dominio.Test",
+      "projectPath": "C:\\Users\\drraf\\Source\\Cursos\\CursoOnline\\test\\CusoOnline.Dominio.Test\\CursoOnline.Dominio.Test.csproj",
       "packagesPath": "C:\\Users\\drraf\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\drraf\\Source\\Cursos\\CursoOnline\\test\\CusoOnline.Dominio.Test\\obj\\",
       "projectStyle": "PackageReference",

@@ -1,7 +1,7 @@
 ﻿using System;
 using Xunit;
 
-namespace CusoOnline.Dominio.Test.Extensoes
+namespace CursoOnline.Dominio.Test.Extensoes
 {
     public static class AssertExtension
     {
