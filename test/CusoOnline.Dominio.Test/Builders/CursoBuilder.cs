@@ -1,4 +1,4 @@
-﻿using CursoOnline.Dominio.Test.Cursos;
+﻿using CursoOnline.Dominio.Cursos;
 
 namespace CursoOnline.Dominio.Test.Builders
 {

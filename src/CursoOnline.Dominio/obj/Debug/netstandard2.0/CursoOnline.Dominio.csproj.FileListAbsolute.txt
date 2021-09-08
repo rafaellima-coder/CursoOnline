@@ -6,3 +6,5 @@ C:\Users\drraf\Source\Cursos\CursoOnline\src\CursoOnline.Dominio\obj\Debug\netst
 C:\Users\drraf\Source\Cursos\CursoOnline\src\CursoOnline.Dominio\obj\Debug\netstandard2.0\CursoOnline.Dominio.csproj.CoreCompileInputs.cache
 C:\Users\drraf\Source\Cursos\CursoOnline\src\CursoOnline.Dominio\obj\Debug\netstandard2.0\CursoOnline.Dominio.dll
 C:\Users\drraf\Source\Cursos\CursoOnline\src\CursoOnline.Dominio\obj\Debug\netstandard2.0\CursoOnline.Dominio.pdb
+C:\Users\drraf\Source\Cursos\CursoOnline\src\CursoOnline.Dominio\obj\Debug\netstandard2.0\CursoOnline.Dominio.csproj.AssemblyReference.cache
+C:\Users\drraf\Source\Cursos\CursoOnline\src\CursoOnline.Dominio\obj\Debug\netstandard2.0\CursoOnline.Dominio.GeneratedMSBuildEditorConfig.editorconfig

@@ -94,4 +94,8 @@ C:\Users\drraf\Source\Cursos\CursoOnline\test\CusoOnline.Dominio.Test\obj\Debug\
 C:\Users\drraf\Source\Cursos\CursoOnline\test\CusoOnline.Dominio.Test\obj\Debug\netcoreapp3.1\CursoOnline.Dominio.Test.dll
 C:\Users\drraf\Source\Cursos\CursoOnline\test\CusoOnline.Dominio.Test\obj\Debug\netcoreapp3.1\CursoOnline.Dominio.Test.pdb
 C:\Users\drraf\Source\Cursos\CursoOnline\test\CusoOnline.Dominio.Test\obj\Debug\netcoreapp3.1\CursoOnline.Dominio.Test.genruntimeconfig.cache
-C:\Users\drraf\Source\Cursos\CursoOnline\test\CusoOnline.Dominio.Test\obj\Debug\netcoreapp3.1\CursoOnline.Dominio.Test.csprojAssemblyReference.cache
+C:\Users\drraf\Source\Cursos\CursoOnline\test\CusoOnline.Dominio.Test\bin\Debug\netcoreapp3.1\Bogus.dll
+C:\Users\drraf\Source\Cursos\CursoOnline\test\CusoOnline.Dominio.Test\obj\Debug\netcoreapp3.1\CursoOnline.Dominio.Test.csproj.AssemblyReference.cache
+C:\Users\drraf\Source\Cursos\CursoOnline\test\CusoOnline.Dominio.Test\obj\Debug\netcoreapp3.1\CursoOnline.Dominio.Test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\drraf\Source\Cursos\CursoOnline\test\CusoOnline.Dominio.Test\bin\Debug\netcoreapp3.1\CursoOnline.Dominio.dll
+C:\Users\drraf\Source\Cursos\CursoOnline\test\CusoOnline.Dominio.Test\bin\Debug\netcoreapp3.1\CursoOnline.Dominio.pdb
