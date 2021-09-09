@@ -99,3 +99,5 @@ C:\Users\drraf\Source\Cursos\CursoOnline\test\CusoOnline.Dominio.Test\obj\Debug\
 C:\Users\drraf\Source\Cursos\CursoOnline\test\CusoOnline.Dominio.Test\obj\Debug\netcoreapp3.1\CursoOnline.Dominio.Test.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\drraf\Source\Cursos\CursoOnline\test\CusoOnline.Dominio.Test\bin\Debug\netcoreapp3.1\CursoOnline.Dominio.dll
 C:\Users\drraf\Source\Cursos\CursoOnline\test\CusoOnline.Dominio.Test\bin\Debug\netcoreapp3.1\CursoOnline.Dominio.pdb
+C:\Users\drraf\Source\Cursos\CursoOnline\test\CusoOnline.Dominio.Test\bin\Debug\netcoreapp3.1\Castle.Core.dll
+C:\Users\drraf\Source\Cursos\CursoOnline\test\CusoOnline.Dominio.Test\bin\Debug\netcoreapp3.1\Moq.dll
