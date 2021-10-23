@@ -1,5 +1,6 @@
 ﻿using Bogus;
 using CursoOnline.Dominio.Cursos;
+using CursoOnline.Dominio.Test.Builders;
 using CursoOnline.Dominio.Test.Extensoes;
 using Moq;
 using System;
@@ -41,6 +42,14 @@ namespace CursoOnline.Dominio.Test.Cursos
                 ));
         }
         [Fact]
+        public void NaoDeveAdicionarCursoComMesmoNomeDeOutroJaSalvo()
+        {
+            var cursoJaSalvo = CursoBuilder.Novo().ComNome(_cursoDto.Nome).Build();
+            _cursoRepositorioMock.Setup(r => r.ObterPeloNome(_cursoDto.Nome)).Returns(cursoJaSalvo);
+            Assert.Throws<ArgumentException>(() => _armazenadorDeCurso.Armazenar(_cursoDto))
+              .ComMensagem("Nome do curso já consta no banco de dados");
+        }
+        [Fact]
         public void NaoDeveInformarPublicoAlvoInvalido() 
         {
             var publicoAlvoIvalido = "Medico";
@@ -48,43 +57,11 @@ namespace CursoOnline.Dominio.Test.Cursos
             Assert.Throws<ArgumentException>(()=>_armazenadorDeCurso.Armazenar(_cursoDto))
                .ComMensagem("Publico Alvo inválido") ;
         }
+       
 
     }
-    public interface ICursoRepositorio
-    {
-       void Adicionar(Curso curso);
-    }
-    public  class ArmazenadorDeCurso
-    {
-        private readonly ICursoRepositorio _cursoRepositorio;
+   
+    
 
-        public ArmazenadorDeCurso(ICursoRepositorio cursoRepositorio)
-        {
-            this._cursoRepositorio = cursoRepositorio;
-        }
-
-        public void Armazenar(CursoDto cursoDto)
-        {
-            Enum.TryParse(typeof(PublicoAlvo),cursoDto.PublicoAlvo,out var publicoAlvo);
-            if (publicoAlvo == null)
-                throw new ArgumentException("Publico Alvo inválido");
-            var curso = 
-                new Curso(cursoDto.Nome,cursoDto.Descricao,cursoDto.CargaHoraria,(PublicoAlvo)publicoAlvo,cursoDto.Valor);
-            _cursoRepositorio.Adicionar(curso);
-           
-        }
-    }
-
-    public  class CursoDto
-    {
-        public CursoDto()
-        {
-        }
-
-        public string Nome { get; set; }
-        public string Descricao { get; set; }
-        public double CargaHoraria { get; set; }
-        public string PublicoAlvo { get; set; }
-        public double Valor { get; set; }
-    }
+   
 }
