@@ -1,8 +1,9 @@
-﻿using System;
+﻿using CursoOnline.Dominio._Base;
+using System;
 
 namespace CursoOnline.Dominio.Cursos
 {
-    public class Curso
+    public class Curso:Entidade
     {
         private string nome;
         private double cargaHoraria;
@@ -55,7 +56,7 @@ namespace CursoOnline.Dominio.Cursos
         }
 
         public string Descricao { get; set; }
-
+        private Curso() { }
         public Curso(string nome, string descricao, double cargaHoraria, PublicoAlvo publicoAlvo, double valor)
         {
             if (string.IsNullOrEmpty(nome))

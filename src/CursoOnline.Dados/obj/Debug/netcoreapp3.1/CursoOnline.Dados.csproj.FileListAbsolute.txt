@@ -1,0 +1,16 @@
+C:\Users\drraf\Source\Cursos\CursoOnline\src\CursoOnline.Dados\bin\Debug\netcoreapp3.1\CursoOnline.Dados.deps.json
+C:\Users\drraf\Source\Cursos\CursoOnline\src\CursoOnline.Dados\bin\Debug\netcoreapp3.1\CursoOnline.Dados.runtimeconfig.json
+C:\Users\drraf\Source\Cursos\CursoOnline\src\CursoOnline.Dados\bin\Debug\netcoreapp3.1\CursoOnline.Dados.runtimeconfig.dev.json
+C:\Users\drraf\Source\Cursos\CursoOnline\src\CursoOnline.Dados\bin\Debug\netcoreapp3.1\CursoOnline.Dados.dll
+C:\Users\drraf\Source\Cursos\CursoOnline\src\CursoOnline.Dados\bin\Debug\netcoreapp3.1\CursoOnline.Dados.pdb
+C:\Users\drraf\Source\Cursos\CursoOnline\src\CursoOnline.Dados\bin\Debug\netcoreapp3.1\CursoOnline.Dominio.dll
+C:\Users\drraf\Source\Cursos\CursoOnline\src\CursoOnline.Dados\bin\Debug\netcoreapp3.1\CursoOnline.Dominio.pdb
+C:\Users\drraf\Source\Cursos\CursoOnline\src\CursoOnline.Dados\obj\Debug\netcoreapp3.1\CursoOnline.Dados.csproj.AssemblyReference.cache
+C:\Users\drraf\Source\Cursos\CursoOnline\src\CursoOnline.Dados\obj\Debug\netcoreapp3.1\CursoOnline.Dados.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\drraf\Source\Cursos\CursoOnline\src\CursoOnline.Dados\obj\Debug\netcoreapp3.1\CursoOnline.Dados.AssemblyInfoInputs.cache
+C:\Users\drraf\Source\Cursos\CursoOnline\src\CursoOnline.Dados\obj\Debug\netcoreapp3.1\CursoOnline.Dados.AssemblyInfo.cs
+C:\Users\drraf\Source\Cursos\CursoOnline\src\CursoOnline.Dados\obj\Debug\netcoreapp3.1\CursoOnline.Dados.csproj.CoreCompileInputs.cache
+C:\Users\drraf\Source\Cursos\CursoOnline\src\CursoOnline.Dados\obj\Debug\netcoreapp3.1\CursoOnline.Dados.csproj.CopyComplete
+C:\Users\drraf\Source\Cursos\CursoOnline\src\CursoOnline.Dados\obj\Debug\netcoreapp3.1\CursoOnline.Dados.dll
+C:\Users\drraf\Source\Cursos\CursoOnline\src\CursoOnline.Dados\obj\Debug\netcoreapp3.1\CursoOnline.Dados.pdb
+C:\Users\drraf\Source\Cursos\CursoOnline\src\CursoOnline.Dados\obj\Debug\netcoreapp3.1\CursoOnline.Dados.genruntimeconfig.cache
