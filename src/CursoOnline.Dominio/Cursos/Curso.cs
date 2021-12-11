@@ -59,14 +59,12 @@ namespace CursoOnline.Dominio.Cursos
         private Curso() { }
         public Curso(string nome, string descricao, double cargaHoraria, PublicoAlvo publicoAlvo, double valor)
         {
-            if (string.IsNullOrEmpty(nome))
-                throw new ArgumentException("Deve ter um nome válido.");
-
-            if (cargaHoraria < 1)
-                throw new ArgumentException("A carga horária deve ser maior ou igual a 1");
-
-            if (valor < 1)
-                throw new ArgumentException("O valor deve ser maior ou igual a 1");
+            ValidadorDeRegra.Novo()
+                .Quando(string.IsNullOrEmpty(nome), "Deve ter um nome válido.")
+                .Quando(cargaHoraria < 1, "A carga horária deve ser maior ou igual a 1")
+                .Quando(valor < 1, "O valor deve ser maior ou igual a 1")
+                .DispararExcecaoSeExistir();
+            
 
             this.nome = nome;
             Descricao = descricao;
