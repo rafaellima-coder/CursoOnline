@@ -1,4 +1,6 @@
-﻿using CursoOnline.Dominio.Test.Builders;
+﻿using Bogus;
+using CursoOnline.Dominio.Cursos;
+using CursoOnline.Dominio.Test.Builders;
 using CursoOnline.Dominio.Test.Extensoes;
 using ExpectedObjects;
 using System;
@@ -7,15 +9,7 @@ using Xunit.Abstractions;
 
 namespace CursoOnline.Dominio.Test.Cursos
 {
-    //Eu, enquanto adiministrador, quero criar e editar cursos para que sejam abertas
-    //matriculas para o mesmo.
-
-    //Critério de aceite
-
-    //- Criar um curso com nome. carga horária, publico alvo e valor do curso
-    //- As opções para o publico alvo são: Estudante, Universitário, Empregado e Empreendedor
-    //- Todos os campos do cruso são obrigatórios.
-    //- Curso deve ter uma descrição.
+    
     public class CursoTest : IDisposable
     {
         readonly ITestOutputHelper _output;
@@ -29,11 +23,12 @@ namespace CursoOnline.Dominio.Test.Cursos
         {
             _output = outputHelper;
             _output.WriteLine("Construtor sendo executado");
-            _nome = "Informática básica";
-            _cargaHoraria = (double)80;
-            _valor = (double)950;
+            var faker = new Faker();
+            _nome = faker.Random.Words();
+            _cargaHoraria = faker.Random.Double(50,1000);
+            _valor = faker.Random.Double(100, 1000);
             _publicoAlvo = PublicoAlvo.Estudante;
-            _descricao = "Uma descrição";
+            _descricao = faker.Lorem.Paragraph();
 
         }
         public void Dispose()
@@ -96,83 +91,6 @@ namespace CursoOnline.Dominio.Test.Cursos
 
 
     }
-    public enum PublicoAlvo
-    {
-        Estudante,
-        Universitario,
-        Empregado,
-        Empreendedor
-    }
-    public class Curso
-    {
-        private string nome;
-        private double cargaHoraria;
-        private PublicoAlvo publicoAlvo;
-        private double valor;
-
-        public string Nome
-        {
-            get
-            {
-                return nome;
-            }
-            private set
-            {
-                nome = value;
-            }
-        }
-        public double CargaHoraria
-        {
-            get
-            {
-                return cargaHoraria;
-            }
-            private set
-            {
-                cargaHoraria = value;
-            }
-        }
-        public PublicoAlvo PublicoAlvo
-        {
-            get
-            {
-                return publicoAlvo;
-            }
-            private set
-            {
-                publicoAlvo = value;
-            }
-        }
-        public double Valor
-        {
-            get
-            {
-                return valor;
-            }
-            private set
-            {
-                valor = value;
-            }
-        }
-
-        public string Descricao { get; set; }
-
-        public Curso(string nome, string descricao, double cargaHoraria, PublicoAlvo publicoAlvo, double valor)
-        {
-            if (string.IsNullOrEmpty(nome))
-                throw new ArgumentException("Deve ter um nome válido.");
-
-            if (cargaHoraria < 1)
-                throw new ArgumentException("A carga horária deve ser maior ou igual a 1");
-
-            if (valor < 1)
-                throw new ArgumentException("O valor deve ser maior ou igual a 1");
-
-            this.nome = nome;
-            Descricao = descricao;
-            this.cargaHoraria = cargaHoraria;
-            this.publicoAlvo = publicoAlvo;
-            this.valor = valor;
-        }
-    }
+   
+    
 }
