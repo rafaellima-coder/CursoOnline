@@ -4,13 +4,11 @@ using CursoOnline.Dominio.Cursos;
 using CursoOnline.Dominio.Test.Builders;
 using CursoOnline.Dominio.Test.Extensoes;
 using ExpectedObjects;
-using System;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace CursoOnline.Dominio.Test.Cursos
 {
-    
+
     public class CursoTest 
     {
         
@@ -56,7 +54,7 @@ namespace CursoOnline.Dominio.Test.Cursos
 
             Assert.Throws<ExcecaoDeDominio>(() =>
              CursoBuilder.Novo().ComNome(nomeInvalido).Build())
-                 .ComMensagem("Deve ter um nome válido.");
+                 .ComMensagem(Resource.NomeInvalido);
 
         }
 
@@ -69,7 +67,7 @@ namespace CursoOnline.Dominio.Test.Cursos
 
             Assert.Throws<ExcecaoDeDominio>(() =>
         CursoBuilder.Novo().ComCargaHoraria(cargaHorariaInvalida).Build())
-                   .ComMensagem("A carga horária deve ser maior ou igual a 1");
+                   .ComMensagem(Resource.CargaHorariaInvalida);
 
         }
 
@@ -82,7 +80,7 @@ namespace CursoOnline.Dominio.Test.Cursos
 
             Assert.Throws<ExcecaoDeDominio>(() =>
        CursoBuilder.Novo().ComValor(valorInvalido).Build())
-                 .ComMensagem("O valor deve ser maior ou igual a 1");
+                 .ComMensagem(Resource.ValorInvalido);
 
         }
         [Fact]
@@ -102,7 +100,7 @@ namespace CursoOnline.Dominio.Test.Cursos
 
             Assert.Throws<ExcecaoDeDominio>(() =>
              curso.AlterarNome(nomeInvalido))
-                 .ComMensagem("Nome inválido.");
+                 .ComMensagem(Resource.NomeInvalido);
 
         }
         [Fact]
@@ -125,7 +123,7 @@ namespace CursoOnline.Dominio.Test.Cursos
 
             Assert.Throws<ExcecaoDeDominio>(() =>
              curso.AlterarCargaHoraria(cargaHorariaInvalida))
-                 .ComMensagem("Carga horária inválida");
+                 .ComMensagem(Resource.CargaHorariaInvalida);
 
         }
         [Fact]
@@ -147,7 +145,7 @@ namespace CursoOnline.Dominio.Test.Cursos
 
             Assert.Throws<ExcecaoDeDominio>(() =>
              curso.AlterarValor(valorInvalido))
-                 .ComMensagem("Valor inválido.");
+                 .ComMensagem(Resource.ValorInvalido);
 
         }
 
